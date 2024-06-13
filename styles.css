@@ -1,0 +1,274 @@
+html, body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background: #fff;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  width: 100%; /* Ensure the header takes up the full width */
+}
+
+header .containing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+header nav {
+  flex-grow: 1; /* Allow the nav to grow and take available space */
+  display: flex;
+  justify-content: flex-end; /* Center the nav items */
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1em;
+}
+
+header nav ul li a {
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  padding: 20px;
+}
+
+.main-image {
+  display: flex;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background: url('./assets/images/image-web-3-desktop.jpg') no-repeat center center;
+  background-size: cover;
+  height: 300px;
+}
+
+.main-content {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.main-content h1 {
+  grid-column: 1 / 2;
+  margin: 0;
+  max-width: 300px;
+}
+
+.text-and-button {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: -20px;
+  margin-right: 10px;
+}
+
+.text-and-button p {
+  margin: 0px 0;
+  max-width: 320px;
+}
+
+.text-and-button button {
+  letter-spacing: 2px; /* Adjust the value as needed */
+  align-self: start;
+  padding: 10px 20px;
+  background-color: hsl(5, 85%, 63%);
+  border: none;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.news-section {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  background: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.news-item {
+  max-width: 300px;
+}
+
+.news-item p {
+  font-size: 15px; 
+  margin-top: 0;
+}
+
+.news-item h4 {
+  margin-bottom: 10px;
+}
+
+.bottom-section {
+  margin-top: 30px;
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+}
+
+.bottom-item {
+  display: flex;
+  gap: 10px;
+}
+
+.bottom-item img {
+  width: 80px;
+  object-fit: cover;
+}
+
+.bottom-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.number {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.bottom-text h3, .bottom-text p {
+  margin: 0;
+}
+
+.white-line {
+  border: 0;
+  height: 1px; /* Adjust the height to your preference */
+  background-color: white; /* Set the color to white */
+  margin: 18px 0; /* Add some margin for spacing */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 10;
+}
+
+.overlay.show {
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: block;
+      z-index: 30;
+  }
+
+  header   nav ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: white;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-top: 60px;
+    z-index: 20;
+}
+
+   header nav ul.show {
+      display: flex;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+}
+
+.main-image {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.main-content {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+.main-content h1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.text-and-button {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.news-section {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.bottom-section {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    grid-template-columns: 1fr;
+}
+
+.main-content h1, .text-and-button p {
+    max-width: none;
+}
+
+header .containing {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+}
